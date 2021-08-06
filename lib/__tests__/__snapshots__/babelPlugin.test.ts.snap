@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dynamic import 1`] = `
+"import(\\"https://todo-web-depend-path\\").then(async ({
+  default: importDepend
+}) => await importDepend('boolean-to-signed'));"
+`;
+
+exports[`import as namespace 1`] = `
+"import _importDepend from \\"https://todo-web-depend-path\\";
+const React = await _importDepend('react');"
+`;
+
+exports[`import default 1`] = `
+"import _importDepend from \\"https://todo-web-depend-path\\";
+const {
+  default: React
+} = await _importDepend('react');"
+`;
+
+exports[`import default and named 1`] = `
+"import _importDepend from \\"https://todo-web-depend-path\\";
+const {
+  default: React,
+  useState: useState
+} = await _importDepend('react');"
+`;
+
+exports[`import named multiple imports mixed 1`] = `
+"import _importDepend from \\"https://todo-web-depend-path\\";
+const {
+  useState: useState,
+  useEffect: useEffectReact
+} = await _importDepend('react');"
+`;
+
+exports[`import named multiple imports no renames 1`] = `
+"import _importDepend from \\"https://todo-web-depend-path\\";
+const {
+  useState: useState,
+  useEffect: useEffect
+} = await _importDepend('react');"
+`;
+
+exports[`import named multiple imports renames 1`] = `
+"import _importDepend from \\"https://todo-web-depend-path\\";
+const {
+  useState: useStateReact,
+  useEffect: useEffectReact
+} = await _importDepend('react');"
+`;
+
+exports[`import named single import no rename 1`] = `
+"import _importDepend from \\"https://todo-web-depend-path\\";
+const {
+  useState: useState
+} = await _importDepend('react');"
+`;
+
+exports[`import named single import rename 1`] = `
+"import _importDepend from \\"https://todo-web-depend-path\\";
+const {
+  useState: useStateReact
+} = await _importDepend('react');"
+`;
+
+exports[`multiple imports 1`] = `
+"import _importDepend from \\"https://todo-web-depend-path\\";
+const React = await _importDepend('react');
+const {
+  default: cn
+} = await _importDepend('classnames');"
+`;

@@ -1,0 +1,51 @@
+{
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "lint": "eslint .",
+    "build:cjs": "tsc --project tsconfigCjs.json",
+    "build:esm": "tsc --project tsconfigEsm.json",
+    "build": "npm run build:cjs && npm run build:esm",
+    "test": "jest",
+    "build:docs": "typedoc lib/index.ts"
+  },
+  "name": "babel-plugin-web-depend",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ChocolateLoverRaj/babel-plugin-web-depend#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChocolateLoverRaj/babel-plugin-web-depend.git"
+  },
+  "main": "dist/cjs/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "types": "./dist/esm/index.d.ts",
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/package-name-regex": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": ">=4.0.1",
+    "eslint": ">=7.12.1",
+    "eslint-config-standard-with-typescript": "^20.0.0",
+    "eslint-plugin-import": ">=2.22.1",
+    "eslint-plugin-node": ">=11.1.0",
+    "eslint-plugin-promise": ">=4.2.1",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.4",
+    "typedoc": "^0.21.5",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@babel/types": "^7.14.9",
+    "never": "^1.0.3",
+    "package-name-regex": "^2.0.4",
+    "tslib": "^2.3.0"
+  },
+  "author": {
+    "name": "Rajas Paranjpe",
+    "url": "https://github.com/ChocolateLoverRaj"
+  }
+}
